@@ -1,0 +1,45 @@
+.slide-show{width:560px;height:300px;overflow: hidden;position: relative;}
+.slide-show{position: relative;}
+ul{margin: 0;padding: 0;list-style: none;}
+ul.slide-img{width:10000px;height:300px;position: absolute;left:0;}
+ul#slide-img-LR li{width:560px;height:300px;float: left;}
+ul#slide-img-fade li,ul#slide-img-buffer li{width:560px;height:300px;position: absolute;left:0;top:0;}
+/*底部切换小图标样式*/
+ul.page li{float: left;}
+ul.page li a,ul.page li a:hover{display: inline-block;padding:5px;background-color: red;color:#fff;cursor: pointer;margin:5px;}
+ul.page{position: absolute;bottom:5px;left:45%;z-index: 200;}
+ul.page li.active a{background-color: aqua;}
+/*左右按钮样式*/
+a.btn{position: absolute;z-index: 300;top:105px;display: inline-block;background: url("../img/ad_ctr.png") no-repeat;width:60px;height:90px;cursor: pointer;}
+a.leftBtn{background-position: 0 -180px;left:0;}
+a.leftBtn:hover{background-position: 0 0;}
+a.rightBtn{background-position: 0 -270px;right:0;}
+a.rightBtn:hover{background-position: 0 -90px;}
+
+/* 爆炸轮播样式*/
+div#slide-show-buffer,div#slide-show-page{
+    background: url("../img/1a.jpg") no-repeat;
+    transition: background 1s linear;
+}
+div#slide-show-buffer div,div#slide-show-fz div{
+    background: url("../img/1a.jpg");
+    width:140px;
+    height:150px;
+    position:absolute;
+    font-size: 0;
+}
+
+.div1{
+    position: relative;
+    z-index: 2;
+    background: transparent;
+    width:560px;
+    height:300px;
+}
+div#slide-show-page{
+    width:560px;
+    height:300px;
+    transform-style: flat;
+    transform: none;
+    transition: none;
+}

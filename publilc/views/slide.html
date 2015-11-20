@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>幻灯片</title>
+    <link rel="stylesheet" href="../css/style.css"/>
+</head>
+<body>
+<!--
+
+左右轮播
+
+-->
+<h1>左右轮播</h1>
+    <div class="slide-show" id="slide-show-LR">
+        <ul class="slide-img" id="slide-img-LR">
+            <li ><img src="../img/1a.jpg" alt="图片1"/></li>
+            <li ><img src="../img/2a.jpg" alt="图片2"/></li>
+            <li ><img src="../img/3a.jpg" alt="图片3"/></li>
+        </ul>
+    </div>
+
+    <br/>
+    <br/>
+<!--
+
+淡入淡出轮播
+
+-->
+<h1>淡入淡出轮播</h1>
+    <div class="slide-show" id="slide-show-fade">
+        <ul class="slide-img" id="slide-img-fade">
+            <li ><img src="../img/1a.jpg" alt="图片1"/></li>
+            <li ><img src="../img/2a.jpg" alt="图片2"/></li>
+            <li ><img src="../img/3a.jpg" alt="图片3"/></li>
+        </ul>
+    </div>
+
+<!--
+
+3D效果轮播——爆炸效果
+
+-->
+<h1>3D效果轮播——爆炸效果</h1>
+
+    <div class="slide-show slide-show-3d" id="slide-show-buffer">
+
+    </div>
+<button id="change">变形</button>
+
+<!--
+
+3D效果轮播——翻转效果
+
+-->
+<h1>3D效果轮播——翻转效果</h1>
+<div class="slide-show slide-show-3d" id="slide-show-fz">
+</div>
+<button id="change-fz">变形</button>
+
+<!--
+
+3D效果轮播——翻书效果
+
+-->
+
+<h1>3D效果轮播——翻书效果</h1>
+<div class="div1">
+    <div class="slide-show slide-show-3d" id="slide-show-page">
+    </div>
+    <button id="page-change">变形</button>
+</div>
+
+
+
+
+
+
+
+<script src="../libs/jquery/jquery.min.js"></script>
+<script src="../js/slide3D.js"></script>
+<script src="../js/slide.js"></script>
+<script>
+    $(function(){
+        /**
+         * 左右轮播
+         * @type {{slideShowId: string, slideUlClassId: string, slidePageUlId: string, showPageUl: boolean, showLRBtn: boolean}}
+         *
+         *     //或者如下写法：
+         *    $.slideLR(options1={
+         *    "slideShowId":"#slide-show-LR",
+         *    "slideUlClassId":"ul#slide-img-LR",
+         *    "slidePageUlId":"ul#page-LR",
+         *    "showPageUl":true,
+         *    "showLRBtn":true
+         *         });
+         *
+         *
+         */
+        var options1={
+            "slideShowId":"#slide-show-LR",
+            "slideUlClassId":"ul#slide-img-LR",
+            "slidePageUlId":"ul#page-LR",
+            "showPageUl":true,
+            "showLRBtn":true
+        }
+        $.slideLR(options1);
+        /**
+         * 淡入淡出
+         * @type {{slideShowId: string, slideUlClassId: string, slidePageUlId: string, showPageUl: boolean, showLRBtn: boolean}}
+         */
+        var options2={
+            "slideShowId":"#slide-show-fade",
+            "slideUlClassId":"ul#slide-img-fade",
+            "slidePageUlId":"ul#page-fade",
+            "showPageUl":true,
+            "showLRBtn":true
+        }
+        $.slideFade(options2);
+
+        /**
+         * 爆炸效果
+         * @type {{slideShowId: string}}
+         */
+        var options3={
+            "slideShowId":"#slide-show-buffer"
+        }
+        $.slideBuffer(options3);
+        /**
+         * 翻转效果
+         * @type {{slideShowId: string}}
+         */
+        var options4={
+            "slideShowId":"#slide-show-fz",
+            "btnId":"#change-fz"
+        }
+        $.slideFz(options4);
+
+        /**
+         * 翻页效果
+         * @type {{slideShowId: string}}
+         */
+        var options5={
+            "slideShowId":"#slide-show-page"
+        }
+        $.slidePage(options5);
+
+
+    })
+</script>
+
+
+</body>
+</html>
